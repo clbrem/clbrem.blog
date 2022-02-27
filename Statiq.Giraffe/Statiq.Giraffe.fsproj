@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="RenderTemplate.fs" />
+        <Compile Include="ComputationExpressions.fs" />
+        <Compile Include="Naming.fs" />
+        <Compile Include="Patterns.fs" />
+        <Compile Include="Doc.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Giraffe.ViewEngine" Version="1.4.0" />
+      <PackageReference Include="Statiq.Common" Version="1.0.0-beta.58" />
+    </ItemGroup>
+
+</Project>
