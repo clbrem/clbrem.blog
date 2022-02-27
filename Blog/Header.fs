@@ -38,6 +38,14 @@ module Header =
           _target "_blank"
           yield! attr
       } |> a
+  let rec linkedin attr =
+      attrs{
+          _class (nameof linkedin)
+          _style $"--url:url(../images/{nameof linkedin}.svg)"
+          _href $"https://linkedin.com/in/cbremer4"
+          _target "_blank"
+          yield! attr
+      } |> a
   let rec github attr=
       attrs{
           _class (nameof github)
@@ -63,5 +71,6 @@ module Header =
               social [] [
                   github [] []
                   twitter [] []
+                  linkedin [] []
               ]
           ]
