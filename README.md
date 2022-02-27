@@ -1,2 +1,2 @@
-# clbrem.blog
+# clbrem.me
 Personal blog

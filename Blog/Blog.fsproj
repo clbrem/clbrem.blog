@@ -19,9 +19,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Statiq.Giraffe\Statiq.Giraffe.fsproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="input\_layout" />
-  </ItemGroup>
+  
 
 </Project>
