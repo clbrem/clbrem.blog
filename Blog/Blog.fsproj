@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="PrismShortcode.fs" />
+    <Compile Include="Header.fs" />
+    <Compile Include="Layout.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.44" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Statiq.Giraffe\Statiq.Giraffe.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="input\_layout" />
+  </ItemGroup>
+
+</Project>
