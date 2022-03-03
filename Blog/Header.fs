@@ -20,7 +20,7 @@ module Header =
         >> Option.defaultValue defaultValue        
   let logo attr =
       h1 (attrs {yield _class Css.logo ; yield! attr})
-  let siteName (ctx: IExecutionContext) (doc: IDocument) attr content=
+  let siteName (ctx: IExecutionContext) (_: IDocument) =
       let (NullOption index) = ctx.OutputPages.["index.html"].FirstOrDefaultDestination()
       tryGetLink "" index [_class Css.siteName;]
           [
@@ -54,6 +54,10 @@ module Header =
           _target "_blank"
           yield! attr
       } |> a
+  let rec menu attr  =
+      attrs{ _class (nameof menu); yield! attr} |> nav
+      
+      
   let social attr =
       attrs {
           _class Css.social
@@ -63,11 +67,15 @@ module Header =
   
 
   let content (doc: IDocument, ctx: IExecutionContext)  =
+          let (NullOption about) = ctx.OutputPages["about.html"].FirstOrDefaultDestination()
+          
+          let url = tryGetLink "" about [] [tryGetTitle "" about |> str] 
+          
           siteHeader [] [
               logo [] [
-                  siteName ctx doc [] []
-                  social [] []
+                  siteName ctx doc                   
               ]
+              menu [] [ url ]
               social [] [
                   github [] []
                   twitter [] []

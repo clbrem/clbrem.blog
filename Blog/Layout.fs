@@ -13,15 +13,18 @@ module Layout =
     let linkScript (scriptLink:string) (context: IExecutionContext) =
         let myLink = context.GetLink(scriptLink)
         script [ _src myLink ]     
-    let defaultHead (context: IExecutionContext) =        
-        head [] [
-            linkStyle "/assets/styles.css" context            
+    let defaultHead (context: IExecutionContext) attrs content =        
+        head [yield! attrs] [
+            linkStyle "/assets/styles.css" context
+            yield! content
         ]
+    let defaultBody attributes  =
+        body [attr "data-menu" "true"; yield! attributes] 
     let layout (context: IExecutionContext) =
         fun _header _body ->
             html [_lang "en"] [
-                yield! [ yield defaultHead context; yield! _header]
-                yield! _body
+                yield defaultHead context [] _header
+                yield defaultBody [] _body
             ]
     let layoutRaw headers body (doc: IDocument, context : IExecutionContext) =
         
