@@ -19,8 +19,8 @@ module Layout =
               meta [ _charset "utf-8" ] 
               meta [_httpEquiv "X-UA-Compatible"; _content "IE=edge"]
               meta [ _name "viewport"; _content "width=device-width, initial-scale=1, shrink-to-fit=no"]
-              meta [_name "author"; _content (index.Get<string>("Author"))]
-              meta [_name "description"; _content (index.Get<string>("Summary")) ]
+              meta [_name "author"; _content (doc.Get<string>("Author"))]
+              meta [_name "description"; _content (doc.Get<string>("Summary")) ]
               linkStyle "/assets/styles.css" context
               linkStyle "/assets/paper.css" context
               yield! content

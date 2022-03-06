@@ -190,11 +190,11 @@ img {
 .logo {
     display: flex;
     min-width: var(--side);
-    padding-right: var(--gap);
+    /*padding-right: var(--gap);*/
 }
 
 .site-name {
-    max-width: calc(100% - 2rem - 3rem);
+    max-width: 100% ;
     padding-bottom: 0.3rem;
     overflow: auto;
     font-size: 3.4rem;
