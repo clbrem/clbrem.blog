@@ -1,5 +1,4 @@
 ﻿module Main
-open System.Threading.Tasks
 open Statiq.App
 open Statiq.Web
 open Statiq.Giraffe
@@ -17,12 +16,18 @@ let main args =
          "Content",
          fun content ->
              content.PostProcessModules.Add(
-                 RenderTemplate Header.content,
-                 RenderTemplateAsync( Layout.layoutRaw Layout.prismHead Layout.prismBody )
-                 
+                 RenderTemplateAsync Article.create, 
+                 RenderTemplateAsync( Layout.layoutRaw Layout.prismHead Layout.prismBody )                 
                  )
              )
-        
+        .ModifyPipeline(
+          "Archives",
+          fun archive ->
+            archive.PostProcessModules.Add(
+                 RenderTemplate Archive.create, 
+                 RenderTemplateAsync( Layout.layoutRaw Layout.prismHead Layout.prismBody )
+                )
+            )        
         .RunAsync()
         .GetAwaiter()
         .GetResult()

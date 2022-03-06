@@ -19,7 +19,7 @@ module Header =
         Option.bind Doc.getTitle
         >> Option.defaultValue defaultValue        
   let logo attr =
-      h1 (attrs {yield _class Css.logo ; yield! attr})
+      p (attrs {yield _class Css.logo ; yield! attr})
   let siteName (ctx: IExecutionContext) (_: IDocument) =
       let (NullOption index) = ctx.OutputPages.["index.html"].FirstOrDefaultDestination()
       tryGetLink "" index [_class Css.siteName;]
@@ -66,12 +66,10 @@ module Header =
       
   
 
-  let content (doc: IDocument, ctx: IExecutionContext)  =
-          let (NullOption about) = ctx.OutputPages["about.html"].FirstOrDefaultDestination()
-          
-          let url = tryGetLink "" about [] [tryGetTitle "" about |> str] 
-          
-          siteHeader [] [
+  let headContent (doc: IDocument, ctx: IExecutionContext) attr content =
+          let (NullOption about) = ctx.OutputPages["about.html"].FirstOrDefaultDestination()          
+          let url = tryGetLink "" about [] [tryGetTitle "" about |> str]           
+          siteHeader attr [
               logo [] [
                   siteName ctx doc                   
               ]
@@ -81,4 +79,6 @@ module Header =
                   twitter [] []
                   linkedin [] []
               ]
+              yield! content
           ]
+  

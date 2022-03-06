@@ -25,6 +25,10 @@ module Doc =
     let getCreated (doc: IDocument) =
         doc.Get<Nullable<DateTime>>("Published")
         |> Option.ofNullable
+    let getCreatedFormat (fmt: string) (doc: IDocument) =
+        doc.Get<Nullable<DateTime>>("Published")
+        |> Option.ofNullable
+        |> Option.map (fun t -> t.ToString(fmt))
     let getAuthor (doc: IDocument) =
         doc.Get<string>("Author")
         |> Option.ofObj

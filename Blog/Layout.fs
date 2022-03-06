@@ -24,7 +24,7 @@ module Layout =
         fun _header _body ->
             html [_lang "en"] [
                 yield defaultHead context [] _header
-                yield defaultBody [] _body
+                yield! _body
             ]
     let layoutRaw headers body (doc: IDocument, context : IExecutionContext) =
         
@@ -36,7 +36,7 @@ module Layout =
         }
         
     let prismHead =  
-       [ link [_rel "stylesheet"; _href "https://cdn.jsdelivr.net/npm/prismjs@1.19.0/themes/prism-okaidia.css"]         
+       [ link [_rel "stylesheet"; _href "https://cdn.jsdelivr.net/npm/prismjs@1.19.0/themes/prism.css"]         
        ]
     let prismBody =
         [
