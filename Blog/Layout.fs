@@ -13,8 +13,7 @@ module Layout =
     let linkScript (scriptLink:string) (context: IExecutionContext) =
         let myLink = context.GetLink(scriptLink)
         script [ _src myLink ]     
-    let defaultHead (doc: IDocument, context: IExecutionContext) attrs content =
-        doc.
+    let defaultHead (doc: IDocument, context: IExecutionContext) attrs content =        
         let index = context.OutputPages.["index.html"].FirstOrDefaultDestination()
         head [yield! attrs] [
               meta [ _charset "utf-8" ] 
