@@ -1,9 +1,12 @@
 ﻿module Main
 open Statiq.App
+open Statiq.Core
 open Statiq.Web
+open Statiq.Images
 open Statiq.Giraffe
 open Blog
 open Blog.Shortcode
+open System.Threading.Tasks
 
 [<EntryPoint>]
 let main args =
@@ -11,7 +14,19 @@ let main args =
         .Factory        
         .CreateWeb(args)
         .AddShortcode<Prism.Fsharp>("FSharp")
-        .AddHostingCommands()        
+        .AddHostingCommands()
+        .AddPipeline(
+            "Images",          
+             ReadFiles("images/*").Where(
+                 fun s ->
+                     List.contains s.Path.Extension [ ".jpg"; ".jpeg"; ".gif"; ".png"]
+                     |> Task.FromResult
+                 ),             
+             MutateImage()
+                 .Resize(300,400)                 
+                 .OutputAsJpeg(),                 
+             WriteFiles()
+          )
         .ModifyPipeline(
          "Content",
          fun content ->

@@ -10,7 +10,17 @@ module Header =
       let rec header = nameof header
       let rec logo = nameof logo
       let rec siteName = nameof siteName |> dashCase
-      let rec social = nameof social 
+      let rec social = nameof social
+  let forkMe =
+        a [_href "https://github.com/clbrem/clbrem.blog"]
+            [
+                  img [attr "loading" "lazy"; _width "90"; _height "90"
+                       _class "attachment-full size-full fork-me"
+                       _alt "Fork me on GitHub" 
+                       _src "https://github.blog/wp-content/uploads/2008/12/forkme_left_white_ffffff.png?resize=90%2C90"
+                       attr "data-recalc-dims" "1"                       
+                      ]
+            ]
   let tryGetLink defaultValue =
         function
             | Some (doc: IDocument) -> Doc.hyperLink doc 
@@ -79,6 +89,7 @@ module Header =
                   twitter [] []
                   linkedin [] []
               ]
+              
               yield! content
           ]
   
