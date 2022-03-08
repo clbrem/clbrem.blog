@@ -1,6 +1,6 @@
 Title: CLBrem.me
 ArchiveSources: posts/*
-ArchiveOrderKey: Created
+ArchiveOrderKey: Published
 ArchiveOrderDescending: True
 ArchivePageSize: 3
 ---

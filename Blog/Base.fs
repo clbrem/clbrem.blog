@@ -9,7 +9,11 @@ module Base =
         Layout.defaultBody []
          [
           Header.headContent (doc, ctx) [] []
-          main (attrs{_class Css.main; yield! attributes}) content
+          main (attrs{_class Css.main; yield! attributes}) [
+              yield! content
+              Navigation.create (doc, ctx) [] []
+          ]
+          
           Footer.create (doc, ctx) [] []
          ]
 
