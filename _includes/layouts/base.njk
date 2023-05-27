@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title or metadata.title }}</title>
+		<meta name="author" content = "{{author}}">
 		<meta name="description" content="{{ description or metadata.description }}">
 
 		{#- Atom and JSON feeds included by default #}
@@ -11,7 +12,7 @@
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
 
 		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
-		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
+		<meta name="generator" content="{{ eleventy.generator }}"> 
 
 		{#-
 		CSS bundles are provided via the `eleventy-plugin-bundle` plugin:
@@ -24,7 +25,9 @@
 		{#- Add an arbitrary string to the bundle #}
 		{%- css %}* { box-sizing: border-box; }{% endcss %}
 		{#- Add the contents of a file to the bundle #}
-		{%- css %}{% include "public/css/index.css" %}{% endcss %}
+		{%- css %}		
+		{% include "public/css/paper.css" %}
+		{% endcss %}
 		{#- Or add from node_modules #}
 		{# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
 
@@ -33,20 +36,21 @@
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 	</head>
-	<body>
-		<a href="#skip" class="visually-hidden">Skip to main content</a>
-
-		<header>
-			<a href="/" class="home-link">{{ metadata.title }}</a>
-
+	<body data-menu=true>		
+		<header class="header">
+			<p class="logo">
+				<a href="/" class="site-name">
+					clbrem.me
+				</a>
+			</p>
+			<nav class="menu">
+				<a href="/about">About</a>
+			</nav>
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav>
-				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
-				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-				{%- endfor %}
-				</ul>
+			<nav class="social">				
+			   <a class="twitter" style="--url:url(/images/twitter.svg)" href="https://twitter.com/clbrem" target="_blank">
+			   <a class="twitter" style="--url:url(/images/linkedin.svg)" href="https://linkedin.com/in/cbremer4" target="_blank">
+			   <a class="twitter" style="--url:url(/images/github.svg)" href="https://github.com/clbrem" target="_blank">
 			</nav>
 		</header>
 
@@ -55,7 +59,8 @@
 		</main>
 
 		<footer></footer>
-
+		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/components/prism-core.min.js"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/plugins/autoloader/prism-autoloader.min.js"></script>
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
 </html>
