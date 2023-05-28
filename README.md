@@ -1,2 +1,1 @@
-# clbrem.me
-Personal blog
+# Page header
