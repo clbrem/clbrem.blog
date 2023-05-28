@@ -8,15 +8,18 @@ module.exports = eleventyConfig => {
 
 		return path.resolve(split.join(path.sep), relativeFilePath);
 	}
+	eleventyConfig.addAsyncShortcode("youtube", async function youtubeShortCode(src) {
+		return 
+	})
 
 	// Eleventy Image shortcode
 	// https://www.11ty.dev/docs/plugins/image/
 	eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, sizes) {
 		// Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
-		// Warning: Avif can be resource-intensive so take care!
-		let widths = [300]
-		let formats = ["avif", "webp", "auto", "jpeg", "jpg"];
+		// Warning: Avif can be resource-intensive so take care!	
+		let formats = ["avif", "webp", "auto", "jpeg", "jpg", "svg"];
 		let file = relativeToInputPath(this.page.inputPath, src);
+		let widths = [500]
 		let metadata = await eleventyImage(file, {
 			widths: widths || ["auto"],
 			formats,
@@ -30,6 +33,7 @@ module.exports = eleventyConfig => {
 			loading: "lazy",
 			decoding: "async",
 		};
-		return eleventyImage.generateHTML(metadata, imageAttributes);
+		return `<figure>${eleventyImage.generateHTML(metadata, imageAttributes)} </a></figure>`;
+
 	});
 };

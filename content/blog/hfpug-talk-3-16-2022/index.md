@@ -1,6 +1,14 @@
-Title: HFPUG Talk
-Author: Chris Bremer
-Published: 3/20/2022
+---
+title: HFPUG Talk
+author: Chris Bremer
+published: 3/20/2022
+description: HFPUG talk (Types and categories the easy way)
+tags: 
+  - hfpug
+  - math
+  - category
+  - monad
+
 ---
 
 I gave a talk at the [Houston Functional Programming Users Group](https://hfpug.org)
@@ -15,13 +23,12 @@ Here is an outline:
 * *Act 3*: Monads + examples 
 
 Check it out!
-## Video
+# Video
 
-<?# YouTube uJWsDFqC53I MaxHeight=400 MaxWidth=800    
-/?>
+https://youtube.com/watch?v=uJWsDFqC53I 
 
-## Whiteboard
 
-<?# Figure 
-  Src="/images/monad.svg"
-/?>
+# Whiteboard
+
+{% image "monad.svg", "Whiteboard with lecture notes"
+%}

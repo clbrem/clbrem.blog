@@ -26,7 +26,8 @@
 		{%- css %}* { box-sizing: border-box; }{% endcss %}
 		{#- Add the contents of a file to the bundle #}
 		{%- css %}		
-		{% include "public/css/paper.css" %}
+
+		{% include "public/css/paper.css" %}		
 		{% endcss %}
 		{#- Or add from node_modules #}
 		{# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
@@ -48,19 +49,17 @@
 			</nav>
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
 			<nav class="social">				
-			   <a class="twitter" style="--url:url(/images/twitter.svg)" href="https://twitter.com/clbrem" target="_blank">
-			   <a class="twitter" style="--url:url(/images/linkedin.svg)" href="https://linkedin.com/in/cbremer4" target="_blank">
-			   <a class="twitter" style="--url:url(/images/github.svg)" href="https://github.com/clbrem" target="_blank">
+			   <a class="twitter" style="--url:url(/images/twitter.svg)" href="https://twitter.com/clbrem" target="_blank"></a>
+			   <a class="twitter" style="--url:url(/images/linkedin.svg)" href="https://linkedin.com/in/cbremer4" target="_blank"></a>
+			   <a class="twitter" style="--url:url(/images/github.svg)" href="https://github.com/clbrem" target="_blank"></a>
 			</nav>
 		</header>
 
-		<main id="skip">
+		<main class="main" id="skip">
 			{{ content | safe }}
 		</main>
 
 		<footer></footer>
-		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/components/prism-core.min.js"></script>
-	    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/plugins/autoloader/prism-autoloader.min.js"></script>
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
 </html>
