@@ -30,5 +30,5 @@ https://youtube.com/watch?v=uJWsDFqC53I
 
 # Whiteboard
 
-{% image "monad.svg", "Whiteboard with lecture notes"
+{% image "monad.svg", "Whiteboard with lecture notes", "50vw, 100vw"
 %}

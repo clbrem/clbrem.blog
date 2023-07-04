@@ -19,7 +19,7 @@ module.exports = eleventyConfig => {
 		// Warning: Avif can be resource-intensive so take care!	
 		let formats = ["avif", "webp", "auto", "jpeg", "jpg", "svg"];
 		let file = relativeToInputPath(this.page.inputPath, src);
-		let widths = [500]
+		let widths =[200,500]
 		let metadata = await eleventyImage(file, {
 			widths: widths || ["auto"],
 			formats,
@@ -33,7 +33,7 @@ module.exports = eleventyConfig => {
 			loading: "lazy",
 			decoding: "async",
 		};
-		return `<figure>${eleventyImage.generateHTML(metadata, imageAttributes)} </a></figure>`;
+		return `<figure>${eleventyImage.generateHTML(metadata, imageAttributes)}</figure>`;
 
 	});
 };
