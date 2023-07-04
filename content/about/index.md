@@ -5,7 +5,7 @@ eleventyNavigation:
   key: About Me
   order: 3
 --- 
-{% image "./mit-gisele.jpg", "The author with foster puppy Gisele"%}
+{% image "./mit-gisele.jpg", "The author with foster puppy Gisele", "50vw, 100vw" %}
 
 I am a software engineer who manages physics simulations 
 for a multinational original equipment manufacturer. 
@@ -27,6 +27,6 @@ My interests include:
 
 NB: The cattle dog pictured above is Gisele, a former foster! 
 My dog Humphrey is pictured below with parrot.
-{% image "./humphrey.jpg", "The author's dog Humphrey with parrot"%}
+{% image "./humphrey.jpg", "The author's dog Humphrey with parrot", "100vw" %}
 
 <?#/ Figure ?>
