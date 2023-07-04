@@ -1,7 +1,7 @@
 ---
 title: HFPUG Talk
 author: Chris Bremer
-published: 3/20/2022
+date: 2022-03-20
 description: HFPUG talk (Types and categories the easy way)
 tags: 
   - hfpug
