@@ -170,6 +170,7 @@ textarea:-webkit-autofill {
 
 img {
     display: block;
+    height: auto;
     max-width: 100%;
 }
 
