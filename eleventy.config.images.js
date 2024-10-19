@@ -19,7 +19,7 @@ module.exports = eleventyConfig => {
 		// Warning: Avif can be resource-intensive so take care!	
 		let formats = ["avif", "webp", "auto", "jpeg", "jpg", "svg"];
 		let file = relativeToInputPath(this.page.inputPath, src);
-		let widths =[200,500]
+		let widths =[50,100,200,500]
 		let metadata = await eleventyImage(file, {
 			widths: widths || ["auto"],
 			formats,

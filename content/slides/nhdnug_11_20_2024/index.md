@@ -8,7 +8,13 @@ tags:
 ---
 
 <!-- Any section element inside of this page is displayed as a slide -->
+<section>
 
+### Data Engineer's (**DE**) office 
+<p class="fragment text-italic">
+  Chris (<b>CB</b>) enters. It looks like he want to ask a question.
+</p>
+</section>
 <section>
 <ul class="dialog">
 <li> CB: Hey, I'm trying to run some sanity checks on our data, but I can't find it in Azure SQL.
@@ -21,7 +27,7 @@ tags:
      DE: It only works if you run it from a notebook in the browser IDE.
 </li>
 <li class="fragment"> 
-     DE: You can't run anything until you spin up some compute. That will take 5-10 minutes.
+     DE: You can't do anything until you spin up some compute. That should take 5-10 minutes.
 </li>
 </ul>
 
@@ -32,23 +38,32 @@ tags:
 ## Why the #%$@ is all my data in Parquet?
 <h4 class="fragment">(A deep dive into the data lake) </h4>
 
-
-
-<aside class="notes">Note: This will only appear in the speaker notes window.</aside>
-
 </section>
 
 <section>
 
-## Markdown 1.2
+## What is a data lake?
+<div class="r-stack">
+     <div class="fragment fade-out">
+     {% image "lake_dragon.jpg", "Lake Conroe dragon", "100vw"
+     %}
+     </div>
+     <table class="fragment">     
+       <tr>
+          <td>
+               <h4> Databricks</h4>
+               {% image "databricks.png", "Whiteboard with lecture notes", "50vw"
+               %}
+          </td>
+          <td>
+               <h4>Snowflake</h4>
+               {% image "databricks.png", "Whiteboard with lecture notes", "50vw" 
+               %}
+          </td>
+     </table>
 
-Content 1.2
+</div>
 
-```js
-import React from "react";
-
-export const myCoolFunction = () => {};
-```
 
 </section>
 <section>
