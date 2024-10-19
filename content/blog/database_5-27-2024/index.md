@@ -7,6 +7,7 @@ tags:
   - topology
   - normalization
   - star schema  
+eleventyExcludeFromCollections: true
 ---
 
 

@@ -4,6 +4,7 @@ layout: layouts/base.njk
 {# Only include the syntax highlighter CSS on blog posts #}
 {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
 {%- css %}{% include "public/css/prism-diff.css" %}{%- endcss %}
+{%- css %}{% include "public/css/katex.min.css" %}{%- endcss %}
 
 
 <article class="post-single">
@@ -19,7 +20,7 @@ layout: layouts/base.njk
 	</header>
 
 	<section class="post-content">
-		{{ content | safe }}
+		{{ content | latex | safe }}
 	</section>
 </article>
 {%- if collections.posts %}
