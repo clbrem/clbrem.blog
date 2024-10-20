@@ -45,55 +45,52 @@ tags:
 ## What is a data lake?
 <div class="r-stack">
      <div class="fragment fade-out">
-     {% image "lake_dragon.jpg", "Lake Conroe dragon", "100vw"
+     {% image "lake_dragon.jpg", "Lake Conroe dragon", "500vw"
      %}
      </div>
-     <table class="fragment">     
-       <tr>
-          <td>
-               <h4> Databricks</h4>
-               {% image "databricks.png", "Whiteboard with lecture notes", "50vw"
-               %}
-          </td>
-          <td>
-               <h4>Snowflake</h4>
-               {% image "databricks.png", "Whiteboard with lecture notes", "50vw" 
-               %}
-          </td>
-     </table>
-
+       <div class="fragment grid-3by1 current-visible">     
+       <div class="grid-item" >
+                    <p>Databricks</p>
+               {% image "databricks.png", "DataBricks", "50w" %}
+       </div>
+         <div class="grid-item" >
+          <p> Snowflake </p>
+               {% image "snowflake.png", "Snowflake", "50w" %}
+       </div>
+       <div class="grid-item">
+          <p> Cloudera <p>
+               {% image "cloudera.png", "Cloudera", "50w" %}
+       </div>       
+     </div>
+     <div class="fragment">   
+     <ul>
+       <li class="fragment">
+          OLAP (index optimized reads)
+       </li>       
+       <li class="fragment">
+          Format Agnostic
+       </li>
+       <li class="fragment">
+          Data lifecycle management
+       </li>
+     </ul>
+     </div>
 </div>
-
-
 </section>
 <section>
 
-## Markdown 2
+## Delta Lake 
+(e.g. Databricks)
 
-Content 2.1
-
+```file
+/delta_lake
+  /_delta_log # all recent transactions 
+    00.json   # plus schema info
+    01.json
+    ...
+    
+  file1.parquet # transaction log periodically
+  file2.parquet # written to parquet
+```
 </section>
-<section>
 
-## Markdown 3.1
-
-Content 3.1
-
-</section>
-
-<section>
-
-## Markdown 3.2
-
-## Content 3.2
-
-</section>
-<section>
-
-## Markdown 3.3
-
-{% image "databricks.png", "Whiteboard with lecture notes", "25vw, 50vw"
-%}
-
-
-</section>
