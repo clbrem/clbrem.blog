@@ -10,7 +10,10 @@ const embedEverything = require("eleventy-plugin-embed-everything");
 const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 
-module.exports = function(eleventyConfig) {
+
+const katex = require("katex");
+
+module.exports = function(eleventyConfig) {	
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
@@ -28,6 +31,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginDrafts);
 	eleventyConfig.addPlugin(pluginImages);
 
+	
+
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
@@ -39,6 +44,15 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(embedEverything);
 
 	// Filters
+	eleventyConfig.addFilter("latex", (content) => {		
+		return content.replace(			
+			/\$\$(.+?)\$\$/g, (_, equation) => {				
+			const cleanEquation = equation.replace(/&lt;/g, "<").replace(/&gt;/g, ">");			
+			let rendered = katex.renderToString(cleanEquation, { throwOnError: false });
+			console.log(rendered)
+			return rendered
+		  });
+	});
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
 		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
@@ -48,6 +62,8 @@ module.exports = function(eleventyConfig) {
 		// dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
 	});
+
+
 
 	// Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("head", (array, n) => {
@@ -91,7 +107,7 @@ module.exports = function(eleventyConfig) {
 			level: [1,2,3,4],
 			slugify: eleventyConfig.getFilter("slugify")
 		});
-	});
+	});	
 
 	// Features to make your build faster (when you need them)
 

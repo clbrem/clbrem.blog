@@ -1,0 +1,22 @@
+ul.dialog {
+    list-style-type:none;    
+    li {
+        border: 1px solid white;
+        padding: 0 1rem 0 1rem;
+    }    
+}
+p.text-italic {
+    font-style: italic
+}
+.grid-3by1 {
+	display: grid;
+	grid-template-columns: auto auto auto;
+    gap: 10rem; 
+}
+.grid-item{ 
+	text-align: center;	
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
