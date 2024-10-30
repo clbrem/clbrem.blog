@@ -1,9 +1,22 @@
-ul.dialog {
-    list-style-type:none;    
-    li {
-        border: 1px solid white;
-        padding: 0 1rem 0 1rem;
-    }    
+.dialog {
+	display: grid;
+	gap: 1rem;
+	padding: 4rem 1rem;
+	.speaker {
+		grid-column: 1;
+		text-align: left;
+		font-weight: bold;
+	}
+	.line {
+		grid-column: 2 / span 2;
+		text-align: left;
+	}
+	.setting {
+		text-align: center;
+		font-style: italic;
+		grid-column: 1 / span 3;
+	}
+
 }
 p.text-italic {
     font-style: italic
@@ -11,10 +24,10 @@ p.text-italic {
 .grid-3by1 {
 	display: grid;
 	grid-template-columns: auto auto auto;
-    gap: 10rem; 
+    gap: 10rem;
 }
-.grid-item{ 
-	text-align: center;	
+.grid-item{
+	text-align: center;
     img {
         width: 100%;
         height: auto;
