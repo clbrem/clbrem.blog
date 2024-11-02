@@ -154,6 +154,58 @@ We could save hours if we streamed updates to a delta table instead of bulk load
 </section>
 <section>
 
-## Parquet Structure
+### Parquet is open source!
+<div class="grid-2by1">
+<div class="grid-item">{% image "parquet.png", "Parquet Logo", "50w" %}</div>
+<div class="grid-item">{% image "asf_logo.svg", "Apache Logo", "50w" %}</div>
+</div>
+
+* [parquet.apache.org](https://parquet.apache.org/)
+* [github.com/apache/parquet-format](https://github.com/apache/parquet-format)
+* [github.com/apache/parquet-java](https://github.com/apache/parquet-java)
 
 </section>
+<section>
+
+## Questions
+
+* How is Parquet space efficient (storage & IO)?
+* Can Parquet support complex data structures?
+* How do you query Parquet files?
+
+
+</section>
+<section>
+
+## Parquet Structure
+
+
+<div class="mermaid">
+<pre>
+
+  %%{init: {'theme':'dark'}}%%
+	block-beta
+	columns 1
+  block:group1
+   columns 1
+   MagicHeader["Magic Number (PAR1)"]
+   block:group2
+     columns 2
+	  h i j k
+    end
+	  MagicFooter["Magic Number (PAR1)"]
+  end
+
+
+
+
+
+
+
+</pre>
+</div>
+
+
+
+</section>
+
