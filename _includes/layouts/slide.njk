@@ -1,35 +1,35 @@
 ---
 ---
 {% set css %}
-    {# Base #}    
+    {# Base #}
     {% include "../../node_modules/reveal.js/dist/reset.css" %}
-    {% include "../../node_modules/reveal.js/dist/reveal.css" %}        
+    {% include "../../node_modules/reveal.js/dist/reveal.css" %}
     {# Fonts #}
     {% include "../../node_modules/reveal.js/dist/theme/fonts/league-gothic/league-gothic.css" %}
-    {% include "../../node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css" %}    
+    {% include "../../node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css" %}
     {# Slide Theme #}
     {% if themeName %}
-      {% if themeName === 'black' %} 
+      {% if themeName === 'black' %}
         {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
-      {% elseif themeName === 'white' %} 
+      {% elseif themeName === 'white' %}
         {% include "../../node_modules/reveal.js/dist/theme/white.css" %}
-      {% elseif themeName === 'league' %} 
+      {% elseif themeName === 'league' %}
         {% include "../../node_modules/reveal.js/dist/theme/league.css" %}
-      {% elseif themeName === 'beige' %} 
+      {% elseif themeName === 'beige' %}
         {% include "../../node_modules/reveal.js/dist/theme/beige.css" %}
-      {% elseif themeName === 'sky' %} 
+      {% elseif themeName === 'sky' %}
         {% include "../../node_modules/reveal.js/dist/theme/sky.css" %}
-      {% elseif themeName === 'night' %} 
+      {% elseif themeName === 'night' %}
         {% include "../../node_modules/reveal.js/dist/theme/night.css" %}
-      {% elseif themeName === 'serif' %} 
+      {% elseif themeName === 'serif' %}
         {% include "../../node_modules/reveal.js/dist/theme/serif.css" %}
-      {% elseif themeName === 'simple' %} 
+      {% elseif themeName === 'simple' %}
         {% include "../../node_modules/reveal.js/dist/theme/simple.css" %}
-      {% elseif themeName === 'solarized' %} 
+      {% elseif themeName === 'solarized' %}
         {% include "../../node_modules/reveal.js/dist/theme/solarized.css" %}
-      {% elseif themeName === 'blood' %} 
+      {% elseif themeName === 'blood' %}
         {% include "../../node_modules/reveal.js/dist/theme/blood.css" %}
-      {% elseif themeName === 'moon' %} 
+      {% elseif themeName === 'moon' %}
         {% include "../../node_modules/reveal.js/dist/theme/moon.css" %}
       {% else %}
         {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
@@ -45,9 +45,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{% if title %}{{title}}, {% endif %}Presentations</title>        
+        <title>{% if title %}{{title}}, {% endif %}Presentations</title>
         {% include "layouts/meta.html" %}
-        <style type="text/css">        
+        <style type="text/css">
             {{ css |  safe }}
         </style>
     </head>
@@ -64,6 +64,8 @@
         <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/search/search.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/math/math.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/zoom/zoom.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.3.0/plugin/mermaid/mermaid.js"></script>
+
 
         <script>
           let deck = new Reveal({
@@ -72,10 +74,11 @@
             overview: true,
             history: true,
             center: true,
-            plugins: [RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom],
+            plugins: [RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, RevealMermaid],
           });
           deck.initialize();
         </script>
+
     </body>
 </html>
 

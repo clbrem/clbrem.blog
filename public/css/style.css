@@ -26,6 +26,11 @@ p.text-italic {
 	grid-template-columns: auto auto auto;
     gap: 10rem;
 }
+.grid-2by1 {
+	display: grid;
+	grid-template-columns: auto auto ;
+	gap: 10rem;
+}
 .grid-item{
 	text-align: center;
     img {

@@ -9,11 +9,11 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const embedEverything = require("eleventy-plugin-embed-everything");
 const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
-
+const pluginMermaid = require('@kevingimbel/eleventy-plugin-mermaid');
 
 const katex = require("katex");
 
-module.exports = function(eleventyConfig) {	
+module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
@@ -21,17 +21,20 @@ module.exports = function(eleventyConfig) {
 		"./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
 	});
 
+
 	// Run Eleventy when these files change:
 	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
 
 	// Watch content images for the image pipeline.
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
 
+
 	// App plugins
+	eleventyConfig.addPlugin(pluginMermaid);
 	eleventyConfig.addPlugin(pluginDrafts);
 	eleventyConfig.addPlugin(pluginImages);
 
-	
+
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);
@@ -44,10 +47,10 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(embedEverything);
 
 	// Filters
-	eleventyConfig.addFilter("latex", (content) => {		
-		return content.replace(			
-			/\$\$(.+?)\$\$/g, (_, equation) => {				
-			const cleanEquation = equation.replace(/&lt;/g, "<").replace(/&gt;/g, ">");			
+	eleventyConfig.addFilter("latex", (content) => {
+		return content.replace(
+			/\$\$(.+?)\$\$/g, (_, equation) => {
+			const cleanEquation = equation.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 			let rendered = katex.renderToString(cleanEquation, { throwOnError: false });
 			console.log(rendered)
 			return rendered
@@ -107,7 +110,7 @@ module.exports = function(eleventyConfig) {
 			level: [1,2,3,4],
 			slugify: eleventyConfig.getFilter("slugify")
 		});
-	});	
+	});
 
 	// Features to make your build faster (when you need them)
 
