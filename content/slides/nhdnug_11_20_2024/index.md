@@ -301,6 +301,41 @@ We could save hours if we streamed updates to a delta table instead of bulk load
 
 <section>
 
+## Encodings
+### Base types
+```thrift
+  - BOOLEAN: 1 bit boolean
+  - INT32: 32 bit signed ints
+  - INT64: 64 bit signed ints
+  - INT96: 96 bit signed ints
+  - FLOAT: IEEE 32-bit floating point values
+  - DOUBLE: IEEE 64-bit floating point values
+  - BYTE_ARRAY: arbitrarily long byte arrays
+  - FIXED_LEN_BYTE_ARRAY: fixed length byte arrays
+```
+
+</section>
+<section>
+
+## Encodings
+### Logical types
+```thrift
+  - STRING: UTF8 ENCODED BYTE_ARRAY
+  - DECIMAL:
+	  INT32 or INT64 or FIXED_LEN_BYTE_ARRAY or BYTE_ARRAY
+	   & PRECISION INT32 & SCALE INT32
+  - DATE: INT32
+  - JSON: UTF8 ENCODED BYTE_ARRAY
+  - LIST (SEE NESTED TYPES)
+  - MAP
+  - etc.
+```
+</section>
+<section>
+
+## Encodings
+### Nested Types
+
 </section>
 
 <section>
