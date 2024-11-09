@@ -177,35 +177,124 @@ We could save hours if we streamed updates to a delta table instead of bulk load
 </section>
 <section>
 
-## Parquet Structure
+## Parquet features
 
+<ul>
+<li class="fragment">Columnar storage</li>
+<li class="fragment">Schema-on-read (vs. schema-on-write)</li>
+<li class="fragment">Encodings</li>
+<li class="fragment">Compression</li>
+<li class="fragment">Index (?!)</li>
+</ul>
+</section>
+<section>
+
+## Parquet Structure
 
 <div class="mermaid">
 <pre>
-
   %%{init: {'theme':'dark'}}%%
 	block-beta
 	columns 1
-  block:group1
-   columns 1
-   MagicHeader["Magic Number (PAR1)"]
-   block:group2
-     columns 2
-	  h i j k
+	block:group1
+     columns 1
+      par["PAR1"]
+	  c11["Column 1 (Chunk 1)"]
+      c21["Column 2 (Chunk 1)"]
+      space
+      c21 --> cn1
+	  cn1["Column n (Chunk 1)"]
+	  blockarrowId6<["&nbsp;&nbsp;"]>(down)
+	  c1m["Column 1 (Chunk m)"]
+	  space
+	  c1m --> cnm
+	  cnm["Column n (Chunk m)"]
+	  meta["File Metadata"]
+      par2["PAR1"]
     end
-	  MagicFooter["Magic Number (PAR1)"]
-  end
-
-
-
-
-
-
-
 </pre>
 </div>
-
-
-
 </section>
+<section>
+
+## Parquet Structure
+
+<div class="mermaid">
+<pre>
+  %%{init: {'theme':'dark'}}%%
+	block-beta
+	columns 3
+	block:group1
+     columns 1
+      par["PAR1"]
+	  c11["Column 1 (Chunk 1)"]
+      c21["Column 2 (Chunk 1)"]
+      space
+      c21 --> cn1
+	  cn1["Column n (Chunk 1)"]
+	  blockarrowId6<["&nbsp;&nbsp;"]>(down)
+	  c1m["Column 1 (Chunk m)"]
+	  space
+	  c1m --> cnm
+	  cnm["Column n (Chunk m)"]
+	  meta["File Metadata"]
+      par2["PAR1"]
+    end
+    space
+    block:group2
+    columns 1
+      header0["Header"]
+      page0["Page 0"]
+      blockarrowId2<["&nbsp;&nbsp;"]>(down)
+      headerk["Header"]
+      pagek["Page k"]
+    end
+    group2 --> c11
+</pre>
+</div>
+</section>
+<section>
+
+## Parquet Structure
+
+<div class="mermaid">
+<pre>
+  %%{init: {'theme':'dark'}}%%
+	block-beta
+	columns 3
+    block:group2
+    columns 1
+      version
+      schema
+      c11m["Column 1 (Chunk 1) Metadata"]
+      c21m["Column 2 (Chunk 1) Metadata"]
+      blockarrowId4<["&nbsp;&nbsp;"]>(down)
+      len["Footer Length"]
+    end
+    space
+	block:group1
+     columns 1
+      par["PAR1"]
+	  c11["Column 1 (Chunk 1)"]
+      c21["Column 2 (Chunk 1)"]
+      space
+      c21 --> cn1
+	  cn1["Column n (Chunk 1)"]
+	  blockarrowId6<["&nbsp;&nbsp;"]>(down)
+	  c1m["Column 1 (Chunk m)"]
+	  space
+	  c1m --> cnm
+	  cnm["Column n (Chunk m)"]
+	  meta["File Metadata"]
+      par2["PAR1"]
+    end
+    group2 --> meta
+    c11m --o c11
+    c21m --o c21
+</pre>
+</div>
+</section>
+
+
+
 
