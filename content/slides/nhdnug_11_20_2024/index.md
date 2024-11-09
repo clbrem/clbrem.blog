@@ -178,6 +178,10 @@ We could save hours if we streamed updates to a delta table instead of bulk load
 <section>
 
 ## Parquet features
+<div class="fragment">
+
+### OLAP (NOT OLTP)
+</div>
 
 <ul>
 <li class="fragment">Columnar storage</li>
@@ -218,7 +222,7 @@ We could save hours if we streamed updates to a delta table instead of bulk load
 <section>
 
 ## Parquet Structure
-
+### Column Chunks
 <div class="mermaid">
 <pre>
   %%{init: {'theme':'dark'}}%%
@@ -256,7 +260,7 @@ We could save hours if we streamed updates to a delta table instead of bulk load
 <section>
 
 ## Parquet Structure
-
+### Metadata
 <div class="mermaid">
 <pre>
   %%{init: {'theme':'dark'}}%%
@@ -293,6 +297,19 @@ We could save hours if we streamed updates to a delta table instead of bulk load
     c21m --o c21
 </pre>
 </div>
+</section>
+
+<section>
+
+</section>
+
+<section>
+
+## Post Credits
+<div class="fragment">
+{% image "no-bloomfilter-4-u.png", "No BLoom Filter 4 U!", "50w" %}
+</div>
+
 </section>
 
 
