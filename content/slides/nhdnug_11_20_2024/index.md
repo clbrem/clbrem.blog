@@ -178,6 +178,10 @@ We could save hours if we streamed updates to a delta table instead of bulk load
 <section>
 
 ## Parquet features
+<div class="fragment">
+
+### OLAP (NOT OLTP)
+</div>
 
 <ul>
 <li class="fragment">Columnar storage</li>
@@ -218,7 +222,7 @@ We could save hours if we streamed updates to a delta table instead of bulk load
 <section>
 
 ## Parquet Structure
-
+### Column Chunks
 <div class="mermaid">
 <pre>
   %%{init: {'theme':'dark'}}%%
@@ -256,7 +260,7 @@ We could save hours if we streamed updates to a delta table instead of bulk load
 <section>
 
 ## Parquet Structure
-
+### Metadata
 <div class="mermaid">
 <pre>
   %%{init: {'theme':'dark'}}%%
@@ -293,6 +297,106 @@ We could save hours if we streamed updates to a delta table instead of bulk load
     c21m --o c21
 </pre>
 </div>
+</section>
+
+<section>
+
+## Encodings
+### Base types
+```thrift
+  - BOOLEAN: 1 bit boolean
+  - INT32: 32 bit signed ints
+  - INT64: 64 bit signed ints
+  - INT96: 96 bit signed ints
+  - FLOAT: IEEE 32-bit floating point values
+  - DOUBLE: IEEE 64-bit floating point values
+  - BYTE_ARRAY: arbitrarily long byte arrays
+  - FIXED_LEN_BYTE_ARRAY: fixed length byte arrays
+```
+
+</section>
+<section>
+
+## Encodings
+### Logical types
+```thrift
+  - STRING: UTF8 ENCODED BYTE_ARRAY
+  - DECIMAL:
+	  INT32 or INT64 or FIXED_LEN_BYTE_ARRAY or BYTE_ARRAY
+	   & PRECISION INT32 & SCALE INT32
+  - DATE: INT32
+  - JSON: UTF8 ENCODED BYTE_ARRAY
+  - LIST (SEE NESTED TYPES)
+  - MAP
+  - RECORD
+  - ETC.
+```
+</section>
+<section>
+
+## Nested Types
+
+<div class="fragment">
+
+Nested Lists
+```thrift
+Column
+- [[1],[2],[3]]]
+- [[4,5]]
+- [[6,7],[8]]
+```
+
+</div>
+<div class="fragment">
+
+Repetition Level
+
+```thrift
+VALUES:
+- 1,2,3,4,5,6,7,8
+REPETITION_LEVELS:
+- 0,1,1,0,2,0,2,1
+
+```
+</div>
+<div class="fragment">
+
+Encoded
+
+```thrift
+1234567801102021
+```
+
+</div>
+</section>
+<section>
+
+## Encodings
+```thrift
+   Data: 100, 100, 100, 101, 101, 102, 103, 103
+```
+ Run Length Encoding
+  ```thrift
+    3, 100, 2, 101, 1, 102, 2, 103
+  ```
+Dictionary Encoding
+  ```thrift
+  - DICTIONARY: 100,101,102,103
+  - DATA: 0, 0, 0, 1, 1, 2, 3
+  ```
+Delta Encoding
+   ```
+   - format: <value count> <first value> <minimum delta> <values>
+   - 8, 100, 0, 0,0,0,1,0,1,1,0
+   ```
+</section>
+<section>
+
+## Post Credits
+<div class="fragment">
+{% image "no-bloomfilter-4-u.png", "No BLoom Filter 4 U!", "50w" %}
+</div>
+
 </section>
 
 
