@@ -111,7 +111,7 @@ tags: ["data engineering", "data lake", "parquet"]
 <div class="dialog">
   <div class="setting"> 6 months ago </div>
   <div class="speaker"> DE </div> <div class="line">
-Data factory doesn't have great support for python.
+Azure Data factory doesn't have great support for python.
 Can we move part of our ETL to Databricks?
 </div>
 </div>
@@ -142,7 +142,7 @@ We could save hours if we streamed updates to a delta table instead of bulk load
 
 ## Parquet readers
 <ul>
-<li class="fragment"> Scala/Spark 👎</li>
+<li class="fragment"> Scala/Spark </li>
 <li class="fragment"> Python (Pandas) 🐍</li>
 <li class="fragment"> <a href="https://duckdb.org/">DuckDB</a> 🦆</li>
 
@@ -372,23 +372,53 @@ Encoded
 <section>
 
 ## Encodings
+
+
 ```thrift
    Data: 100, 100, 100, 101, 101, 102, 103, 103
 ```
- Run Length Encoding
-  ```thrift
-    3, 100, 2, 101, 1, 102, 2, 103
-  ```
-Dictionary Encoding
-  ```thrift
-  - DICTIONARY: 100,101,102,103
-  - DATA: 0, 0, 0, 1, 1, 2, 3
-  ```
-Delta Encoding
-   ```
-   - format: <value count> <first value> <minimum delta> <values>
-   - 8, 100, 0, 0,0,0,1,0,1,1,0
-   ```
+<div class="r-stack">
+<div class="fragment fade-in-then-out wide">
+
+Run Length Encoding
+
+```thrift
+	3, 100, 2, 101, 1, 102, 2, 103
+```
+
+</div>
+	<div class="fragment fade-in-then-out wide">
+	Dictionary Encoding
+
+```thrift
+- DICTIONARY: 100,101,102,103
+- DATA: 0, 0, 0, 1, 1, 2, 3
+```
+
+  </div>
+
+  <div class="fragment fade-in-then-out wide">
+	Delta Encoding
+
+```thrift
+- format: [count] [first_value] [minimum_delta] [values]
+- 8, 100, 0, 0,0,0,1,0,1,1,0
+```
+
+  </div>
+
+</div>
+</section>
+<section>
+
+## Compression
+
+* SNAPPY
+* GZIP
+* LZO
+* BROTLI
+* ZSTD
+
 </section>
 <section>
 
