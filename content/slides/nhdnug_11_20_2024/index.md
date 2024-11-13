@@ -169,7 +169,7 @@ We could save hours if we streamed updates to a delta table instead of bulk load
 
 ## Questions
 
-* How is Parquet space efficient (storage & IO)?
+* Is Parquet space efficient (storage & IO)?
 * Can Parquet support complex data structures?
 * How do you query Parquet files?
 
@@ -422,13 +422,214 @@ Run Length Encoding
 </section>
 <section>
 
+## Indexing
+
+How do you query Parquet efficiently?
+
+<div class="fragment">
+"Predicate Pushdown" (e.g. LINQ to SQL)
+</div>
+<ul class="fragment">
+  <li>Min/Max statistics</li>
+  <li>Bloom Filter</li>
+</ul>
+</section>
+<section>
+
+## Indexing
+### Z-Order
+<div class="r-stack fragment">
+<div class="fragment fade-out wide">
+
+```
+[
+{"x":1,"y":1},{"x":1,"y":2},{"x":1,"y":3},{"x":1,"y":4},
+{"x":2,"y":1},{"x":2,"y":2},{"x":2,"y":3},{"x":2,"y":4},
+{"x":3,"y":1},{"x":3,"y":2},{"x":3,"y":3},{"x":3,"y":4},
+{"x":4,"y":1},{"x":4,"y":2},{"x":4,"y":3},{"x":4,"y":4}
+]
+```
+How do you sort multiple columns?
+
+</div>
+<div class="fragment fade-in-then-out wide">
+
+<div class="mermaid">
+<pre>
+  %%{init: {'theme':'dark'}}%%
+
+	block-beta
+	columns 1
+    block:group2
+    columns 7
+			c11["{x:1,y:1}"] space
+      c12["{x:1,y:2}"] space
+      c13["{x:1,y:3}"] space
+      c14["{x:1,y:4}"]
+   	  c21["{x:2,y:1}"] space
+			c22["{x:2,y:2}"] space
+			c23["{x:2,y:3}"] space
+			c24["{x:2,y:4}"]
+      space space space space space space space
+	 	  c31["{x:3,y:1}"] space
+			c32["{x:3,y:2}"] space
+			c33["{x:3,y:3}"] space
+			c34["{x:3,y:4}"]
+			c41["{x:4,y:1}"] space
+			c42["{x:4,y:2}"] space
+			c43["{x:4,y:3}"] space
+			c44["{x:4,y:4}"]
+
+		end
+
+</pre>
+</div>
+</div>
+<div class="fragment fade-in-then-out wide">
+
+<div class="mermaid">
+<pre>
+  %%{init: {'theme':'dark'}}%%
+
+	block-beta
+	columns 1
+    block:group2
+    columns 7
+			c11["{x:1,y:1}"] space
+      c12["{x:1,y:2}"] space
+      c13["{x:1,y:3}"] space
+      c14["{x:1,y:4}"]
+   	  c21["{x:2,y:1}"] space
+			c22["{x:2,y:2}"] space
+			c23["{x:2,y:3}"] space
+			c24["{x:2,y:4}"]
+      space space space space space space space
+	 	  c31["{x:3,y:1}"] space
+			c32["{x:3,y:2}"] space
+			c33["{x:3,y:3}"] space
+			c34["{x:3,y:4}"]
+			c41["{x:4,y:1}"] space
+			c42["{x:4,y:2}"] space
+			c43["{x:4,y:3}"] space
+			c44["{x:4,y:4}"]
+      c11 --> c12
+      c12 --> c21
+      c21 --> c22
+		end
+</pre>
+</div>
+</div>
+<div class="fragment fade-in wide">
+
+<div class="mermaid">
+<pre>
+  %%{init: {'theme':'dark'}}%%
+
+	block-beta
+	columns 1
+    block:group2
+    columns 7
+			c11["{x:1,y:1}"] space
+      c12["{x:1,y:2}"] space
+      c13["{x:1,y:3}"] space
+      c14["{x:1,y:4}"]
+   	  c21["{x:2,y:1}"] space
+			c22["{x:2,y:2}"] space
+			c23["{x:2,y:3}"] space
+			c24["{x:2,y:4}"]
+      space space space space space space space
+	 	  c31["{x:3,y:1}"] space
+			c32["{x:3,y:2}"] space
+			c33["{x:3,y:3}"] space
+			c34["{x:3,y:4}"]
+			c41["{x:4,y:1}"] space
+			c42["{x:4,y:2}"] space
+			c43["{x:4,y:3}"] space
+			c44["{x:4,y:4}"]
+      c11 --> c12
+      c12 --> c21
+      c21 --> c22
+      c22 --> c13
+      c13 --> c14
+      c14 --> c23
+      c23 --> c24
+      c24 --> c31
+      c31 --> c32
+      c32 --> c41
+      c41 --> c42
+      c42 --> c33
+      c33 --> c34
+      c34 --> c43
+      c43 --> c44
+		end
+</pre>
+</div>
+</div>
+</div>
+</section>
+<section>
+
+## Indexing
+### Bloom Filter
+A *Bloom Filter* tests membership in a set
+
+<div class="r-stack ">
+<div class="fragment fade-in-then-out">
+
+* No false negatives
+* False positives possible
+
+</div>
+<div class="fragment fade-in">
+
+* Serialized as a bit array
+* One per column chunk
+
+</div>
+
+</div>
+
+</section>
+<section>
+
+## Summary
+
+Your org WILL store data in Parquet
+
+<div class="r-stack">
+<div class="fragment fade-in-then-out">
+
+#### Good news:
+
+* Parquet is super efficient (I/O, storage)
+* Predicate pushdown
+* Open source
+</div>
+<div class="fragment fade-in">
+
+#### Bad news:
+
+* Vendor lock in
+* Tooling needs improvement
+</div>
+</div>
+
+</section>
+<section>
+
+# Thank you!
+
+<div class="grid-2by1">
+<div class="grid-item">{% image "headshot.jpg", "Headshot of Chris Bremer", "50w" %}</div>
+	<div class="grid-item">{% image "QR_Code.png", "LinkedIn QR Code", "50w" %}</div>
+</div>
+
+</section>
+<section>
+
 ## Post Credits
 <div class="fragment">
 {% image "no-bloomfilter-4-u.png", "No BLoom Filter 4 U!", "50w" %}
 </div>
 
 </section>
-
-
-
-
