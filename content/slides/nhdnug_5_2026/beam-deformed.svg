@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 376.655 422.506" width="900" height="300">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08121f" />
+      <stop offset="55%" stop-color="#10233d" />
+      <stop offset="100%" stop-color="#1a3256" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="100" fill="url(#bg-gradient)" rx="6" />
+  <g id="mesh" stroke="#e6f0ff" stroke-opacity="0.55" stroke-width="1.2">
+    <polygon points="0,0 72.3206,19.4164 49.6656,65.9539" fill="#0ea5e9" fill-opacity="0.88" />
+    <polygon points="0,0 49.6656,65.9539 0,50" fill="#22d3ee" fill-opacity="0.72" />
+    <polygon points="72.3206,19.4164 140.409,56.7333 100.119,103.631" fill="#2563eb" fill-opacity="0.86" />
+    <polygon points="72.3206,19.4164 100.119,103.631 49.6656,65.9539" fill="#38bdf8" fill-opacity="0.72" />
+    <polygon points="140.409,56.7333 204.628,109.937 150.418,157.435" fill="#4f46e5" fill-opacity="0.86" />
+    <polygon points="140.409,56.7333 150.418,157.435 100.119,103.631" fill="#818cf8" fill-opacity="0.7" />
+    <polygon points="204.628,109.937 264.939,175.221 200.603,223.31" fill="#7c3aed" fill-opacity="0.84" />
+    <polygon points="204.628,109.937 200.603,223.31 150.418,157.435" fill="#c084fc" fill-opacity="0.68" />
+    <polygon points="264.939,175.221 321.563,249.067 250.682,297.196" fill="#db2777" fill-opacity="0.82" />
+    <polygon points="264.939,175.221 250.682,297.196 200.603,223.31" fill="#f472b6" fill-opacity="0.68" />
+    <polygon points="321.563,249.067 376.655,332.572 300.921,374.664" fill="#f97316" fill-opacity="0.8" />
+    <polygon points="321.563,249.067 300.921,374.664 250.682,297.196" fill="#fdba74" fill-opacity="0.66" />
+    <polygon points="0,50 49.6656,65.9539 28.6774,118.319" fill="#14b8a6" fill-opacity="0.76" />
+    <polygon points="0,50 28.6774,118.319 0,100" fill="#5eead4" fill-opacity="0.62" />
+    <polygon points="49.6656,65.9539 100.119,103.631 60.4597,155.241" fill="#0f766e" fill-opacity="0.78" />
+    <polygon points="49.6656,65.9539 60.4597,155.241 28.6774,118.319" fill="#2dd4bf" fill-opacity="0.64" />
+    <polygon points="100.119,103.631 150.418,157.435 96.5275,208.478" fill="#16a34a" fill-opacity="0.78" />
+    <polygon points="100.119,103.631 96.5275,208.478 60.4597,155.241" fill="#86efac" fill-opacity="0.62" />
+    <polygon points="150.418,157.435 200.603,223.31 136.722,273.761" fill="#65a30d" fill-opacity="0.78" />
+    <polygon points="150.418,157.435 136.722,273.761 96.5275,208.478" fill="#bef264" fill-opacity="0.62" />
+    <polygon points="200.603,223.31 250.682,297.196 181.03,346.893" fill="#ca8a04" fill-opacity="0.78" />
+    <polygon points="200.603,223.31 181.03,346.893 136.722,273.761" fill="#fde047" fill-opacity="0.6" />
+    <polygon points="250.682,297.196 300.921,374.664 229.133,422.506" fill="#ea580c" fill-opacity="0.8" />
+    <polygon points="250.682,297.196 229.133,422.506 181.03,346.893" fill="#fdba74" fill-opacity="0.62" />
+  </g>
+  <g id="fixed-nodes" fill="#f8fafc" stroke="#f43f5e" stroke-width="1.2">
+    <circle cx="0" cy="0" r="3" />
+    <circle cx="0" cy="50" r="3" />
+    <circle cx="0" cy="100" r="3" />
+  </g>
+</svg>

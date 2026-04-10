@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reveal.js Presentation</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/moon.css" id="theme" />
+    <style>
+      .mcp-title {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .mcp-content {
+        margin-top: 80px;
+      }
+
+      .reveal .slides section .mcp-intro-image {
+        display: block;
+        width: 600px;
+        max-width: 600px;
+        height: auto;
+        max-height: 60vh;
+        margin: 24px auto 0;
+        object-fit: contain;
+      }
+
+      .reveal .slides section .server-intro-image {
+        display: block;
+        width: 600px;
+        max-width: 600px;
+        height: auto;
+        max-height: 60vh;
+        margin: 24px auto 0;
+        object-fit: contain;
+      }
+
+      .mcp-video {
+        margin: 24px auto 0;
+        width: 92%;
+        max-height: 78vh;
+        display: block;
+        object-fit: contain;
+        border: 3px solid #9ca3af;
+        border-radius: 12px;
+        background: #000;
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+      }
+
+      .mcp-definition {
+        width: 86%;
+        margin: 36px auto 0;
+        padding: 28px 32px;
+        border: 2px solid rgba(156, 163, 175, 0.55);
+        border-radius: 16px;
+        background: rgba(8, 18, 31, 0.55);
+        text-align: left;
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      }
+
+      .mcp-definition p {
+        margin: 0 0 18px;
+        font-size: 1.05em;
+        line-height: 1.45;
+      }
+
+      .mcp-definition cite {
+        display: block;
+        font-size: 0.6em;
+        font-style: normal;
+        color: #cbd5e1;
+      }
+
+      .mcp-definition a {
+        color: #7dd3fc;
+      }
+
+      .decision-mark {
+        display: inline-block;
+        margin-right: 0.45em;
+        font-size: 1.15em;
+        vertical-align: middle;
+      }
+
+      .faded {
+        color: #8a8a8a;
+      }
+
+      .more-faded {
+        color: #4f4f4f;
+        opacity: 0.4;
+      }
+
+      .full-slide-image {
+        display: block;
+        max-width: 100%;
+        max-height: 72vh;
+        width: auto;
+        height: auto;
+        margin: 32px auto 0;
+        object-fit: contain;
+      }
+
+      .vibe-transition-slide {
+        position: relative;
+        min-height: 78vh;
+      }
+
+      .vibe-transition-text {
+        position: relative;
+        z-index: 2;
+      }
+
+      .vibe-transition-text.fragment {
+        transition: opacity 1.4s ease 1s;
+      }
+
+      .vibe-transition-text.fragment.visible {
+        opacity: 1;
+      }
+
+      .vibe-transition-text.fragment.fade-out.visible {
+        opacity: 0.2;
+      }
+
+      .vibe-transition-image {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        max-width: 100%;
+        max-height: 72vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .vibe-transition-image.fragment {
+        transition: opacity 1.8s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Challenge: </h1>
+          <h2>Model Context Protocol</h2>
+          <p>Cape Town Summit // March 2026<br />ReedHycalog Digital</p>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h2 class="mcp-title">Model Context Protocol (MCP)</h2>
+            <img class="mcp-intro-image" src="Protea.png" alt="Protea flower" />
+          </section>
+          <section data-auto-animate>
+            <h2 class="mcp-title">Model Context Protocol (MCP)</h2>
+            <div class="mcp-content">
+              <div class="mcp-definition">
+                <p>
+                  Model Context Protocol is an open-source standard that lets AI applications connect to outside systems in a consistent way, so they can use data, tools, and workflows beyond the prompt itself.
+                </p>
+                <cite>
+                  Source:
+                  <a href="https://modelcontextprotocol.io/docs/getting-started/intro">
+                    modelcontextprotocol.io/docs/getting-started/intro
+                  </a>
+                </cite>
+              </div>
+            </div>
+          </section>
+          <section data-auto-animate>
+            <h2 class="mcp-title">Model Context Protocol (MCP)</h2>
+            <div class="mcp-content">
+              <video class="mcp-video" data-autoplay preload="auto" playsinline muted controls>
+                <source src="codex1.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </section>
+          <section data-auto-animate>
+            <h2 class="mcp-title">Model Context Protocol (MCP)</h2>
+            <div class="mcp-content">
+              <video class="mcp-video" data-autoplay preload="auto" playsinline muted controls>
+                <source src="codex2.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </section>
+          <section data-auto-animate>
+            <h2 class="mcp-title">Model Context Protocol (MCP)</h2>
+            <div class="mcp-content">
+              <video class="mcp-video" data-autoplay preload="auto" playsinline muted controls>
+                <source src="codex3.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h2>Should I build an MCP server?</h2>
+            <img class="server-intro-image" src="BirdOfParadise.png" alt="Bird of paradise flower" />
+          </section>
+          <section data-auto-animate>
+            <h2>Should I build an MCP server?</h2>
+            <p>
+              Probably not.
+            </p>
+          </section>
+          <section data-auto-animate>
+            <h2>Should I build an MCP server?</h2>
+            <h3>
+              <span class="decision-mark fragment" data-fragment-index="1">❌</span>
+              I want to build a RESTful TODO list app.
+            </h3>
+            <p class="fragment fade-up" data-fragment-index="1">
+              This works pretty well out of the box! 
+              Agentic AI can manage state using markdown files.
+            </p>
+          </section>
+          <section data-auto-animate>
+            <h2>Should I build an MCP server?</h2>
+            <h3>
+              <span class="decision-mark fragment" data-fragment-index="1">❌</span>
+              I want to call APIs from a single interface and process the response.
+            </h3>
+            <p class="fragment fade-up" data-fragment-index="1">
+              Try a skill! You can register the APIs and execute simple python scripts.
+            </p>
+          </section>
+          <section data-auto-animate>
+            <h2>Should I build an MCP server?</h2>
+            <h3>
+              <span class="decision-mark fragment" data-fragment-index="1">✅</span>
+              I want to grant users access to a large repository of sensitive data.
+            </h3>
+            <p class="fragment fade-up" data-fragment-index="1">
+              Okay, you may want to create a MCP RAG service.
+            </p>
+          </section>
+          <section data-auto-animate>
+            <h2>Should I build an MCP server?</h2>
+            <h3>
+              <span class="decision-mark fragment" data-fragment-index="1">✅</span>
+              I want to marshall complex input and perform compute-intensive tasks.
+            </h3>
+            <p class="fragment fade-up" data-fragment-index="1">
+              Let's go.
+            </p>
+          </section>          
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h2>MCP architecture</h2>
+            <img class="mcp-intro-image" src="Aloe.png" alt="Aloe plant" />
+          </section>
+          <section data-auto-animate>
+            <h2>MCP architecture</h2>
+            <h3>Client</h3>
+            <ul>
+              <li class="fragment fade-in">Popular apps <b>already</b> have built-in MCP clients.
+              </li>
+              <li class="fragment fade-in">Custom chat clients. </li>
+              <li class="fragment fade-in">MCP Middleware.</li>
+            </ul>
+          </section>
+          <section data-auto-animate>
+            <h2>MCP architecture</h2>
+            <h3>Server</h3>
+            <ul>
+              <li class="fragment fade-in">Tools: actions the model can invoke.</li>
+              <li class="fragment fade-in">Resources: read-only data or context the model can fetch.</li>
+              <li class="fragment fade-in faded more-faded">Prompts: reusable prompt templates or workflows.</li>
+            </ul>
+          </section>
+          <section data-auto-animate>
+            <h2>MCP architecture</h2>
+            <h3>Transport</h3>
+            <ul> 
+              <li class="fragment fade-in">JSON-RPC</li>
+              <li class="fragment fade-in"><code>stdio</code>: local processes</li>
+              <li class="fragment fade-in">Streaming HTTP/SSE: remote servers</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h2>CAVEATS</h2>
+            <img class="mcp-intro-image" src="Spoonfig.png" alt="Spoonfig plant" />
+          </section>
+          <section data-auto-animate>
+            <h2>CAVEATS</h2>
+            <h3>CONTEXT</h3>
+            <ul>
+              <li class="fragment fade-in">Keep the total context window manageable.</li>
+              <li class="fragment fade-in">Too many tools or MCP servers clog context.</li>
+              <li class="fragment fade-in">Tools and responses require metadata.</li>
+              <li class="fragment fade-in">Resources should stay concise.</li>
+              <li class="fragment fade-in">Tools can manage large datasets in the background.</li>
+
+            </ul>
+          </section>
+          <section data-auto-animate>
+            <h2>CAVEATS</h2>
+            <h3>VIEW MODEL</h3>
+            <ul>
+              <li class="fragment fade-in">View = chat history.</li>
+              <li class="fragment fade-in">Model = current context.</li>
+              <li class="fragment fade-in">Updates = prompts plus MCP calls.</li>
+              <li class="fragment fade-in">Standard UI/UX rules still apply.</li>
+            </ul>
+          </section>
+          <section data-auto-animate>
+            <h2>CAVEATS</h2>
+            <h3>INTERACTIONS</h3>
+            <ul>
+              <li class="fragment fade-in">AuthN/AuthZ flow</li>
+              <li class="fragment fade-in">Query <em>resource</em> for data</li>
+              <li class="fragment fade-in">OR hydrate data entity with uuid</li>
+              <li class="fragment fade-in">Call <em>tool</em> (SYNC or ASYNC)</li>
+              <li class="fragment fade-in">Stream <em>tool</em> progress/chain of thought (ASYNC)</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h2>VIBE-ATHON</h2>
+            <img class="mcp-intro-image" src="Rooibos.png" alt="Rooibos plant" />
+          </section>
+          <section data-auto-animate>
+            <h2>VIBE-ATHON</h2>
+            <h3>RULES</h3>
+            <ul>
+              <li class="fragment fade-in">Create an MCP server.</li>
+              <li class="fragment fade-in">Register it with a chat client.</li>
+              <li class="fragment fade-in">Vibes only: write and test it in Codex, Copilot CLI, or Claude Code.</li>
+              <li class="fragment fade-in">Keep the project related to NOV ReedHycalog.</li>
+            </ul>
+          </section>
+          <section data-auto-animate>
+            <h2>VIBE-ATHON</h2>
+            <h3>TEAMS</h3>
+            <ul>
+              <li class="fragment fade-in">Form 2-3 teams.</li>
+              <li class="fragment fade-in">Pick a topic: Orbit simulation, offset mapping, or dashboard navigation.</li>
+              <li class="fragment fade-in">Build in the <code>Orbit.Valence</code> repo.</li>
+            </ul>
+          </section>
+          <section data-auto-animate>
+            <div class="vibe-transition-slide">
+              <div class="vibe-transition-text fragment fade-out" data-fragment-index="1">
+                <h2>VIBE-ATHON</h2>
+                <h3>Good Luck</h3>
+              </div>
+              <img class="vibe-transition-image fragment fade-in" data-fragment-index="1" src="vibe-athon.png" alt="Vibe-Athon" />
+            </div>
+          </section>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true
+      });
+    </script>
+  </body>
+</html>

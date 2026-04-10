@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="900" height="300">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08121f" />
+      <stop offset="55%" stop-color="#10233d" />
+      <stop offset="100%" stop-color="#1a3256" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="100" fill="url(#bg-gradient)" rx="6" />
+  <g id="mesh" stroke="#e6f0ff" stroke-opacity="0.55" stroke-width="1.2">
+    <polygon points="0,0 50,0 50,50" fill="#0ea5e9" fill-opacity="0.88" />
+    <polygon points="0,0 50,50 0,50" fill="#22d3ee" fill-opacity="0.72" />
+    <polygon points="50,0 100,0 100,50" fill="#2563eb" fill-opacity="0.86" />
+    <polygon points="50,0 100,50 50,50" fill="#38bdf8" fill-opacity="0.72" />
+    <polygon points="100,0 150,0 150,50" fill="#4f46e5" fill-opacity="0.86" />
+    <polygon points="100,0 150,50 100,50" fill="#818cf8" fill-opacity="0.7" />
+    <polygon points="150,0 200,0 200,50" fill="#7c3aed" fill-opacity="0.84" />
+    <polygon points="150,0 200,50 150,50" fill="#c084fc" fill-opacity="0.68" />
+    <polygon points="200,0 250,0 250,50" fill="#db2777" fill-opacity="0.82" />
+    <polygon points="200,0 250,50 200,50" fill="#f472b6" fill-opacity="0.68" />
+    <polygon points="250,0 300,0 300,50" fill="#f97316" fill-opacity="0.8" />
+    <polygon points="250,0 300,50 250,50" fill="#fdba74" fill-opacity="0.66" />
+    <polygon points="0,50 50,50 50,100" fill="#14b8a6" fill-opacity="0.76" />
+    <polygon points="0,50 50,100 0,100" fill="#5eead4" fill-opacity="0.62" />
+    <polygon points="50,50 100,50 100,100" fill="#0f766e" fill-opacity="0.78" />
+    <polygon points="50,50 100,100 50,100" fill="#2dd4bf" fill-opacity="0.64" />
+    <polygon points="100,50 150,50 150,100" fill="#16a34a" fill-opacity="0.78" />
+    <polygon points="100,50 150,100 100,100" fill="#86efac" fill-opacity="0.62" />
+    <polygon points="150,50 200,50 200,100" fill="#65a30d" fill-opacity="0.78" />
+    <polygon points="150,50 200,100 150,100" fill="#bef264" fill-opacity="0.62" />
+    <polygon points="200,50 250,50 250,100" fill="#ca8a04" fill-opacity="0.78" />
+    <polygon points="200,50 250,100 200,100" fill="#fde047" fill-opacity="0.6" />
+    <polygon points="250,50 300,50 300,100" fill="#ea580c" fill-opacity="0.8" />
+    <polygon points="250,50 300,100 250,100" fill="#fdba74" fill-opacity="0.62" />
+  </g>
+  <g id="fixed-nodes" fill="#f8fafc" stroke="#f43f5e" stroke-width="1.2">
+    <circle cx="0" cy="0" r="3" />
+    <circle cx="0" cy="50" r="3" />
+    <circle cx="0" cy="100" r="3" />
+  </g>
+</svg>
