@@ -22,9 +22,18 @@
         display: block;
         width: 600px;
         max-width: 600px;
+        margin: 24px auto 0;
+      }
+
+      .reveal .slides section .mcp-intro-image figure {
+        margin: 0;
+      }
+
+      .reveal .slides section .mcp-intro-image img {
+        display: block;
+        width: 100%;
         height: auto;
         max-height: 60vh;
-        margin: 24px auto 0;
         object-fit: contain;
       }
 
@@ -32,9 +41,18 @@
         display: block;
         width: 600px;
         max-width: 600px;
+        margin: 24px auto 0;
+      }
+
+      .reveal .slides section .server-intro-image figure {
+        margin: 0;
+      }
+
+      .reveal .slides section .server-intro-image img {
+        display: block;
+        width: 100%;
         height: auto;
         max-height: 60vh;
-        margin: 24px auto 0;
         object-fit: contain;
       }
 
@@ -136,6 +154,18 @@
         max-height: 72vh;
         width: auto;
         height: auto;
+      }
+
+      .vibe-transition-image figure {
+        margin: 0;
+      }
+
+      .vibe-transition-image img {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 72vh;
         object-fit: contain;
       }
 
@@ -155,7 +185,7 @@
         <section>
           <section data-auto-animate>
             <h2 class="mcp-title">Model Context Protocol (MCP)</h2>
-            <img class="mcp-intro-image" src="Protea.png" alt="Protea flower" />
+            <div class="mcp-intro-image">{% image "Protea.png", "Protea flower", "auto" %}</div>
           </section>
           <section data-auto-animate>
             <h2 class="mcp-title">Model Context Protocol (MCP)</h2>
@@ -201,7 +231,7 @@
         <section>
           <section data-auto-animate>
             <h2>Should I build an MCP server?</h2>
-            <img class="server-intro-image" src="BirdOfParadise.png" alt="Bird of paradise flower" />
+            <div class="server-intro-image">{% image "BirdOfParadise.png", "Bird of paradise flower", "auto" %}</div>
           </section>
           <section data-auto-animate>
             <h2>Should I build an MCP server?</h2>
@@ -254,7 +284,7 @@
         <section>
           <section data-auto-animate>
             <h2>MCP architecture</h2>
-            <img class="mcp-intro-image" src="Aloe.png" alt="Aloe plant" />
+            <div class="mcp-intro-image">{% image "Aloe.png", "Aloe plant", "auto" %}</div>
           </section>
           <section data-auto-animate>
             <h2>MCP architecture</h2>
@@ -288,7 +318,7 @@
         <section>
           <section data-auto-animate>
             <h2>CAVEATS</h2>
-            <img class="mcp-intro-image" src="Spoonfig.png" alt="Spoonfig plant" />
+            <div class="mcp-intro-image">{% image "Spoonfig.png", "Spoonfig plant", "auto" %}</div>
           </section>
           <section data-auto-animate>
             <h2>CAVEATS</h2>
@@ -327,7 +357,7 @@
         <section>
           <section data-auto-animate>
             <h2>VIBE-ATHON</h2>
-            <img class="mcp-intro-image" src="Rooibos.png" alt="Rooibos plant" />
+            <div class="mcp-intro-image">{% image "Rooibos.png", "Rooibos plant", "auto" %}</div>
           </section>
           <section data-auto-animate>
             <h2>VIBE-ATHON</h2>
@@ -354,7 +384,7 @@
                 <h2>VIBE-ATHON</h2>
                 <h3>Good Luck</h3>
               </div>
-              <img class="vibe-transition-image fragment fade-in" data-fragment-index="1" src="vibe-athon.png" alt="Vibe-Athon" />
+              <div class="vibe-transition-image fragment fade-in" data-fragment-index="1">{% image "vibe-athon.png", "Vibe-Athon", "auto" %}</div>
             </div>
           </section>
         </section>

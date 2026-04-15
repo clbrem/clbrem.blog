@@ -45,6 +45,7 @@
 		"@kevingimbel/eleventy-plugin-mermaid": "^2.2.1",
 		"eleventy-plugin-embed-everything": "^1.16.0",
 		"katex": "^0.16.10",
+		"package.json": "^2.0.1",
 		"reveal.js": "^5.1.0"
 	}
 }

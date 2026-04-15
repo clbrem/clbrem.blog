@@ -25,6 +25,9 @@ module.exports = function(eleventyConfig) {
 	// Run Eleventy when these files change:
 	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
 
+	// Pass video files through to _site unchanged.
+	eleventyConfig.addPassthroughCopy("content/**/*.mp4");
+
 	// Watch content images for the image pipeline.
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
 
@@ -52,7 +55,6 @@ module.exports = function(eleventyConfig) {
 			/\$\$(.+?)\$\$/g, (_, equation) => {
 			const cleanEquation = equation.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 			let rendered = katex.renderToString(cleanEquation, { throwOnError: false });
-			console.log(rendered)
 			return rendered
 		  });
 	});
