@@ -5,7 +5,6 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const pluginNavigation = require("@11ty/eleventy-navigation");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const embedEverything = require("eleventy-plugin-embed-everything");
 const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
@@ -13,7 +12,8 @@ const pluginMermaid = require('@kevingimbel/eleventy-plugin-mermaid');
 
 const katex = require("katex");
 
-module.exports = function(eleventyConfig) {
+module.exports = async function(eleventyConfig) {
+	const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({

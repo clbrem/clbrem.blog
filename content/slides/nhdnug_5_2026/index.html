@@ -172,11 +172,96 @@
       .vibe-transition-image.fragment {
         transition: opacity 1.8s ease;
       }
+
+      /* ── Houston Prairie Theme ───────────────────────────────────────── */
+      .houston-slide,
+      .houston-slide h1,
+      .houston-slide h2,
+      .houston-slide h3,
+      .houston-slide p,
+      .houston-slide li,
+      .houston-slide ul {
+        color: #1a1a1a !important;
+        text-shadow: none !important;
+      }
+
+      .houston-slide a {
+        color: #2980b9 !important;
+      }
+
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- ── HOUSTON INTRO ─────────────────────────────────────────────── -->
+        <section class="houston-slide" data-background-color="#b3d4ed">
+          <h1>Vibe-Athon</h1>
+          <h2>Cape Town &rarr; Houston</h2>
+          <p>NHDNUG // April 2026<br />Chris Bremer</p>
+        </section>
+        <section data-background-color="#b3d4ed">
+          <section class="houston-slide" data-auto-animate>
+            <h2>Motivation</h2>
+            <div class="mcp-intro-image">{% image "beautyberry.png", "Texas beautyberry", "auto" %}</div>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2>Motivation</h2>
+            <h3>LLMs changed how we code</h3>
+            <ul>
+              <li class="fragment fade-in">IDE &rarr; debug only</li>
+              <li class="fragment fade-in">Code review = proof</li>
+              <li class="fragment fade-in">LLMs handle edge cases</li>
+            </ul>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2>Motivation</h2>
+            <h3>What About Our Users?</h3>
+            <ul>
+              <li class="fragment fade-in">Text-first interaction</li>
+              <li class="fragment fade-in">PWAs obsolete! </li>
+              <li class="fragment fade-in">Meet users where they are</li>
+            </ul>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2>Motivation</h2>
+            <h3>Customers Struggle</h3>
+            <ul>
+              <li class="fragment fade-in">Spreadsheets &rarr; context</li>
+              <li class="fragment fade-in">Poor secrets hygiene</li>
+              <li class="fragment fade-in">Vibe-coded scripts </li>
+            </ul>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2>Motivation</h2>
+            <h3>Enter MCP</h3>
+            <ul>
+              <li class="fragment fade-in">Introduced by Anthropic ~18 months ago</li>
+              <li class="fragment fade-in">Formalizes LLM server&ndash;client interaction</li>
+              <li class="fragment fade-in">Deliver software through chat</li>
+            </ul>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2>Motivation</h2>
+            <h3>Is it too early?</h3>
+            <ul>
+              <li class="fragment fade-in">Tooling not ready</li>
+              <li class="fragment fade-in">Ecosystem immature</li>
+              <li class="fragment fade-in">Streaming &ne; REST</li>
+            </ul>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2>Motivation</h2>
+            <h3>Why We Build Now</h3>
+            <ul>
+              <li class="fragment fade-in">Customers won&rsquo;t wait</li>
+              <li class="fragment fade-in">Risk &rarr; practice</li>
+              <li class="fragment fade-in">Low risk, defined scope: Vibe-a-thon</li>
+            </ul>
+          </section>
+        </section>
+
         <section>
           <h1>Challenge: </h1>
           <h2>Model Context Protocol</h2>
@@ -374,8 +459,14 @@
             <h3>TEAMS</h3>
             <ul>
               <li class="fragment fade-in">Form 2-3 teams.</li>
-              <li class="fragment fade-in">Pick a topic: Orbit simulation, offset mapping, or dashboard navigation.</li>
-              <li class="fragment fade-in">Build in the <code>Orbit.Valence</code> repo.</li>
+              <li class="fragment fade-in">Pick a topic:
+                <ul>
+                  <li> Simulation</li>
+                  <li> Well Offset Analysis </li>
+                  <li> Dashboard generation </li>
+                  </ul>
+              </li>
+
             </ul>
           </section>
           <section data-auto-animate>
@@ -386,6 +477,77 @@
               </div>
               <div class="vibe-transition-image fragment fade-in" data-fragment-index="1">{% image "vibe-athon.png", "Vibe-Athon", "auto" %}</div>
             </div>
+          </section>
+        </section>
+
+        <!-- ── HOUSTON OUTCOMES ──────────────────────────────────────────── -->
+        <section data-background-color="#b3d4ed">
+          <section class="houston-slide" data-auto-animate>
+            <h2>Outcomes</h2>
+            <div class="mcp-intro-image">{% image "loblolly.png", "Loblolly pine", "auto" %}</div>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2>Simulation Assistant</h2>
+            <h3>Queue simulations &rarr; PowerBI dashboard</h3>
+            <ul>
+              <li class="fragment fade-in"><b>Value:</b> faster iteration; natural language interpretation of results</li>
+              <li class="fragment fade-in"><b>Innovation:</b> external tool integration overcomes LLM limitations &mdash; curated, purpose-built UX</li>
+            </ul>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2>Offset Analysis</h2>
+            <h3>Find similar wells, summarize tool performance</h3>
+            <ul>
+              <li class="fragment fade-in"><b>Value:</b> plain language query replaces an over-complicated filter/search panel</li>
+              <li class="fragment fade-in"><b>Innovation:</b> statistical outlier detection eliminates spurious results &mdash; greater confidence in offsets</li>
+            </ul>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2>Outcomes</h2>
+            <h3>Both are commercialization candidates for 2026.</h3>
+          </section>
+        </section>
+
+        <!-- ── HOUSTON LEARNINGS ─────────────────────────────────────────── -->
+        <section data-background-color="#b3d4ed">
+          <section class="houston-slide" data-auto-animate>
+            <h2>Learnings</h2>
+            <div class="mcp-intro-image">{% image "wildflowers.png", "Texas wildflowers", "auto" %}</div>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2>Dogfood your tools</h2>
+            <ul>
+              <li class="fragment fade-in">The team that used LLMs to <em>build</em> the MCP server produced a more native result.</li>
+              <li class="fragment fade-in">Better metadata, better prompts, less friction to use.</li>
+              <li class="fragment fade-in">Practice what you preach.</li>
+            </ul>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2>Own your client</h2>
+            <ul>
+              <li class="fragment fade-in">Out-of-the-box MCP clients have serious gaps &mdash; especially AuthZ/AuthN and data visualization.</li>
+              <li class="fragment fade-in">Controlling the client gives you access to richer context.</li>
+              <li class="fragment fade-in">Don&rsquo;t cede the interface.</li>
+            </ul>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2>Swing big</h2>
+            <ul>
+              <li class="fragment fade-in">You can do a lot in a short amount of time.</li>
+              <li class="fragment fade-in">Talk to SMEs. Build something Microsoft (or HCL) can&rsquo;t.</li>
+              <li class="fragment fade-in">Don&rsquo;t limit yourself to thin layers over existing APIs.</li>
+            </ul>
+          </section>
+        </section>
+
+        <!-- ── HOUSTON CONCLUSION ────────────────────────────────────────── -->
+        <section data-background-color="#b3d4ed">
+          <section class="houston-slide" data-auto-animate>
+            <h2>Thank You</h2>
+          </section>
+          <section class="houston-slide" data-auto-animate>
+            <h2 style="opacity: 0;">Thank You</h2>
+            <div class="mcp-intro-image fragment fade-in">{% image "texas-landscape.png", "Texas landscape", "auto" %}</div>
           </section>
         </section>
 
