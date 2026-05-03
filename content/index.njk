@@ -3,11 +3,19 @@ layout: layouts/home.njk
 eleventyNavigation:
   key: Home
   order: 1
-numberOfLatestPostsToShow: 3
+numberOfLatestPostsToShow: 1
 ---
+<article class="post-entry">
+	<a href="/slides/nhdnug_5_2026/" class="postlist-link">Vibe-Athon: Cape Town → Houston</a>
+	<time class="postlist-date" datetime="2026-04-01">April 2026</time>
+</article>
+<article class="post-entry">
+	<a href="/slides/nhdnug_11_20_2024/" class="postlist-link">Why is all of my data in Parquet?</a>
+	<time class="postlist-date" datetime="2024-11-20">November 2024</time>
+</article>
+
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
